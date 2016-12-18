@@ -178,7 +178,7 @@ CNN网络用在图片处理中具有十分突出的优点，它可以直接作�
 本文的3D-CNN网络架构如图\ref{fig:3}所示，网络的输入共有4个通道：手和上半身分别对应的深度图和灰度图，在第一次卷积操作后将灰度图和深度图合并为一个通道。经过3层卷积和3层最大值池化将特征维度降为5×5×1的低维特征图，然后将全部的特征图展开并连在一起，与一个含有1024个节点的全连接层相连接，输出层含有101个节点，与隐马尔科夫的101个隐藏状态相对应。
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=10cm]{cnnArchitecture.png}
+  \includegraphics[width=14cm]{cnnArchitecture.png}
   \caption{\label{fig:3}3D-CNN网络架构}
 \end{figure}
 
@@ -275,7 +275,7 @@ canny算子是现阶段应用最为广泛而且设计最为理想的边缘检测
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=8cm]{dataVisual.png}
+  \includegraphics[width=12cm]{dataVisual.png}
   \caption{\label{fig:8}可视化数据集}
 \end{figure}
 
@@ -353,17 +353,17 @@ J_{mean} = \frac{1}{|G_i|}\sum_{G_i}J_{s,n}
 
 本文随机抽取了几段视频，利用改进前后的预测结果对其中的手势序列进行标注，对比结果如图\ref{fig:11}，可以看到有一部分在改进前没有识别到的手势在改进后被成功识别了出来。
 \begin{figure} \centering
-\subfigure[] { \label{fig:9a}
-\includegraphics[width=6cm]{raw0463.png}
+\subfigure[第一组视频改进前] { \label{fig:9a}
+\includegraphics[width=10cm]{raw0463.png}
 }
-\subfigure[] { \label{fig:9b}
-\includegraphics[width=6cm]{enhance0463.png}
+\subfigure[第一组视频一改进后] { \label{fig:9b}
+\includegraphics[width=10cm]{enhance0463.png}
 }
-\subfigure[] { \label{fig:9c}
-\includegraphics[width=6cm]{raw0465.png}
+\subfigure[第二组视频二改进前] { \label{fig:9c}
+\includegraphics[width=10cm]{raw0465.png}
 }
-\subfigure[] { \label{fig:9d}
-\includegraphics[width=6cm]{enhance0465.png}
+\subfigure[第二组视频改进后] { \label{fig:9d}
+\includegraphics[width=10cm]{enhance0465.png}
 }
 \caption{\label{fig:11}预测标注序列}
 \end{figure}
