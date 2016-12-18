@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xelatex 2016.12.2)  18 DEC 2016 10:39
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Arch Linux) (preloaded format=xelatex 2016.12.2)  18 DEC 2016 13:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1441,6 +1441,24 @@ Package caption Info: subfigure package is loaded.
 
 LaTeX Warning: Label `fig:6' multiply defined.
 
+
+LaTeX Warning: Label `fig:9a' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:9a' multiply defined.
+
+
+LaTeX Warning: Label `fig:9b' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:9b' multiply defined.
+
+
+LaTeX Warning: Label `fig:9c' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:9c' multiply defined.
+
 )
 \openout1 = `report.aux'.
 
@@ -1580,8 +1598,8 @@ Overfull \hbox (7.2147pt too wide) in paragraph at lines 141--142
 []\OT1/cmr/m/n/12 ]$\EU1/lmr/m/n/12 ,
  []
 
-File: DBN.png Graphic file (type QTm)
-<use  "DBN.png" > [5] [6]
+File: RBM.png Graphic file (type QTm)
+<use  "RBM.png" > [5] [6]
 File: cnnArchitecture.png Graphic file (type QTm)
  <use  "cnnArchitecture.png" >
 File: fusion.png Graphic file (type QTm)
@@ -1589,48 +1607,56 @@ File: fusion.png Graphic file (type QTm)
 [7] [8]
 File: regular.png Graphic file (type QTm)
  <use  "regular.png" > [9]
-File: canny.png Graphic file (type QTm)
- <use  "canny.png" >
-File: canny.png Graphic file (type QTm)
- <use  "canny.png" >
-[10]
+File: canny.jpg Graphic file (type QTm)
+ <use  "canny.jpg" >
+File: combineresult.jpg Graphic file (type QTm)
+
+<use  "combineresult.jpg" > [10]
 File: dataVisual.png Graphic file (type QTm)
  <use  "dataVisual.png" > [11] [12]
 File: cm_sk.png Graphic file (type QTm)
- <use  "cm_sk.png" >
-File: cm_rgb.png Graphic file (type QTm)
 
-<use  "cm_rgb.png" >
+<use  "cm_sk.png" >
+File: cm_rgb.png Graphic file (type QTm)
+ <use  "cm_rgb.png" >
 File: cm_fu.png Graphic file (type QTm)
  <use  "cm_fu.png" >
-File: dataVisual.png Graphic file (type QTm)
- <use  "dataVisual.png" >
-File: dataVisual.png Graphic file (type QTm)
+File: cmnorm.eps Graphic file (type eps)
+ <cmnorm.eps>
+[13] [14]
+File: raw0463.png Graphic file (type QTm)
+ <use  "raw0463.png" >
+File: enhance0463.png Graphic file (type QTm)
+ <use  "enhance0463.png" >
+File: raw0465.png Graphic file (type QTm)
 
-<use  "dataVisual.png" > [13] [14] (./report.bbl [15])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 371.
- [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 371.
+<use  "raw0465.png" >
+File: enhance0465.png Graphic file (type QTm)
+ <use  "enhance0465.png" > [15] (./report.bbl [16])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 380.
+
+[17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 380.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 371.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 371.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 380.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 380.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 371.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 380.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 29410 strings out of 493589
- 559294 string characters out of 6148800
- 564605 words of memory out of 5000000
- 32556 multiletter control sequences out of 15000+600000
+ 29426 strings out of 493589
+ 559480 string characters out of 6148800
+ 565700 words of memory out of 5000000
+ 32564 multiletter control sequences out of 15000+600000
  10244 words of font info for 65 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  63i,9n,73p,10433b,2872s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (16 pages).
+Output written on report.pdf (17 pages).

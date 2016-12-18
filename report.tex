@@ -144,7 +144,7 @@ $p(H_1)$是初始概率，$p(H_t|H_{t-1})$是隐藏状态间的状态转移概�
 用来处理骨骼数据的DBN网络实际上是由多层的RBM堆叠以及一个softmax输出层构成的，一个普通的RBM网络如图\ref{fig:rbn}所示，共有2层，第一层称为可视层，是输入层，第二层是隐含层，也就是特征提取层。之所以利用RBM网络能够提取数据的特征，是因为当输入 $v_m$ 的时候，通过 $p(h|v)$ 可以得到隐藏层 $h_n$，而得到隐藏层 $h_n$ 之后，通过 $p(v|h)$ 又能够得到可视层 $v_m'$，通过调整参数，我们能够使得从隐藏层得到的可视层与原来的可视层一样，那么此时得到的隐藏层就是可视层另外一种表达，也就是说隐含层提取到了可视层的特征。
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=8cm]{DBN.png}
+  \includegraphics[width=8cm]{RBM.png}
   \caption{\label{fig:rbn}DBN网络架构}
 \end{figure}
 
@@ -178,7 +178,7 @@ CNN网络用在图片处理中具有十分突出的优点，它可以直接作�
 本文的3D-CNN网络架构如图\ref{fig:3}所示，网络的输入共有4个通道：手和上半身分别对应的深度图和灰度图，在第一次卷积操作后将灰度图和深度图合并为一个通道。经过3层卷积和3层最大值池化将特征维度降为5×5×1的低维特征图，然后将全部的特征图展开并连在一起，与一个含有1024个节点的全连接层相连接，输出层含有101个节点，与隐马尔科夫的101个隐藏状态相对应。
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=8cm]{cnnArchitecture.png}
+  \includegraphics[width=10cm]{cnnArchitecture.png}
   \caption{\label{fig:3}3D-CNN网络架构}
 \end{figure}
 
@@ -254,7 +254,7 @@ canny算子是现阶段应用最为广泛而且设计最为理想的边缘检测
 \begin{figure}[ht]
   \centering
   \label{fig:6}
-  \includegraphics[width=8cm]{canny.png}
+  \includegraphics[width=8cm]{canny.jpg}
   \caption{图像边缘提取图\label{fig:6}}
 \end{figure}
 
@@ -262,7 +262,7 @@ canny算子是现阶段应用最为广泛而且设计最为理想的边缘检测
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=8cm]{canny.png}
+  \includegraphics[width=8cm]{combineresult.jpg}
   \caption{\label{fig:7}历史边缘叠加图}
 \end{figure}
 
@@ -331,13 +331,13 @@ J_{mean} = \frac{1}{|G_i|}\sum_{G_i}J_{s,n}
 
 用混淆矩阵的方式能够更直观地展示不同模型的预测性能，如图\ref{fig:9}。
 \begin{figure} \centering
-\subfigure[尺度变化前] { \label{fig:9a}
+\subfigure[骨骼模型] { \label{fig:9a}
 \includegraphics[width=6cm]{cm_sk.png}
 }
-\subfigure[尺度变化后] { \label{fig:9b}
+\subfigure[RGB-D模型] { \label{fig:9b}
 \includegraphics[width=6cm]{cm_rgb.png}
 }
-\subfigure[尺度变化后] { \label{fig:9c}
+\subfigure[融合模型] { \label{fig:9c}
 \includegraphics[width=6cm]{cm_fu.png}
 }
 \caption{\label{fig:9}本文各模型的混淆矩阵}
@@ -347,17 +347,26 @@ J_{mean} = \frac{1}{|G_i|}\sum_{G_i}J_{s,n}
 本文的改进主要是在CNN网络这一块，通过提高RGBD模块的预测准确性，进而提高了整体模型的准确性，因此实验主要关注CNN网络的效果提升。CNN网络存在较多漏识别的最根本原因是提取的特征不够强大，不足以用来识别跨域了多帧的高级行为信息。在我们引入高级行为特征向量来对模型进行规则化以后，得到了对验证集的混淆矩阵如图\ref{fig:10}所示，对比图\ref{fig:9}中改进前的混淆矩阵，能够观察到漏识别一栏的颜色深度有所下降。
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=8cm]{dataVisual.png}
+  \includegraphics[width=8cm]{cmnorm.eps}
   \caption{\label{fig:10}改进CNN的混淆矩阵}
 \end{figure}
 
 本文随机抽取了几段视频，利用改进前后的预测结果对其中的手势序列进行标注，对比结果如图\ref{fig:11}，可以看到有一部分在改进前没有识别到的手势在改进后被成功识别了出来。
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=8cm]{dataVisual.png}
-  \caption{\label{fig:11}预测标注序列}
+\begin{figure} \centering
+\subfigure[] { \label{fig:9a}
+\includegraphics[width=6cm]{raw0463.png}
+}
+\subfigure[] { \label{fig:9b}
+\includegraphics[width=6cm]{enhance0463.png}
+}
+\subfigure[] { \label{fig:9c}
+\includegraphics[width=6cm]{raw0465.png}
+}
+\subfigure[] { \label{fig:9d}
+\includegraphics[width=6cm]{enhance0465.png}
+}
+\caption{\label{fig:11}预测标注序列}
 \end{figure}
-
 
 \section{结论}
 3D-CNN的方法虽然较传统的2D的方法增加了时间轴，考虑到了对动态特征的提取，但是由于输入窗口尺寸有限在分析高级运动特征的时候还是具有一定的局限性。本文通过引入动态目标的边缘信息来获取高级行为信息，用已知的高级运动特征来引导CNN网络的规则化输出，提升算法表现。相较于原方法的简单叠加，对双通道的运动特征予以保留也在一定程度上使得网络性能更好。本文还兼顾到了控制计算量的问题，动态调整输入帧的步长，提升学习效率。总体来说，改进方法较原方法具有性能提升。
